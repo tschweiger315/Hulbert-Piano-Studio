@@ -1,0 +1,140 @@
+<!doctype html>
+<html><head>
+<meta charset="UTF-8">
+<title>Hulburt Piano Studio</title>
+<link rel="stylesheet" href="css/navbar.css">
+	
+	
+	<style>
+	.hero h1 {
+  font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, 'sans-serif'serif;/* Change to any font you want */
+		font-weight: 300;
+		
+  font-size: 4rem;                 /* Make it big */
+  color: white;  						/* So it’s readable */
+		background: rgba(0, 0, 0, 0.4);
+	padding: 15px 25px;
+	border-radius: 12px;
+  position: absolute; /* Allows precise placement */
+  bottom: 75px;                    /* 20px from the bottom */
+  right: 75px;                      /* 50% from the left */
+  margin: 0;                       /* Remove default h1 spacing */
+	
+}</style>
+</head>
+	<style>
+		
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* HERO IMAGE */
+.hero {
+  height: 100vh;  /* full viewport height */
+  width: 100%;
+  background-image: url("images/background.jpg");
+  background-repeat: no-repeat;
+  background-position: top center; /* sticks to top */
+  background-size: cover;          /* stretches horizontally & vertically */
+  margin: 0;
+  padding: 0;
+	position: relative;
+}
+	
+	</style>
+	
+<body>
+	
+	
+	<!-- SITE HEADER -->
+  <header class="site-header" id="siteHeader" role="banner" aria-label="Main site header">
+    <div class="header-inner">
+      <img src="images/hulburt piano studio.png" alt="hulbert piano studio" class="logo"> 
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="lessons.html">Lessons</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+<!--site title-->
+<div class="hero">
+<h1>Hulbert Piano Studio</h1>	
+</div>	
+	<!-- Blank spacer -->
+<div class="spacer"></div>
+
+<!-- Text Section -->
+<section class="text-section">
+  <div class="text-box">
+    <h2>About Our Studio</h2>
+    <p>
+      Hulburt Piano Studio
+    </p>
+  </div>
+</section>
+	
+	<style>
+	
+	
+	/* blank space between hero and text */
+.spacer {
+  height: 100px;  /* adjust how much space you want */
+}
+
+/* section takes most of viewport height */
+.text-section {
+  min-height: 80vh;          /* fills most of the screen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+	background-image: url("images/IMG_2327.jpg");
+	background-position: center;
+	background-attachment: fixed;
+}
+
+/* the bordered box */
+.text-box {
+  background: rgba(255, 255, 255, 0.7);  /* semi-transparent so image shows */
+  border: 2px solid white;
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 800px;
+  text-align: center;
+  backdrop-filter: blur(8px); /* glassy effect */
+  opacity: 0;                 /* start invisible */
+  transform: translateY(50px); /* slightly moved down */
+  transition: all 0.8s ease;   /* smooth animation */
+}
+
+/* active state when scrolled into view */
+.text-box.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+	
+</style>
+	
+	<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  });
+
+  const textBox = document.querySelector('.text-box');
+  observer.observe(textBox);
+</script>
+	
+	
+</body>
+</html>
